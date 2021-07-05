@@ -1,7 +1,7 @@
 mod log;
 
 use actix_web::{get, post, web, App, HttpResponse, HttpServer};
-use log::{Log, LogExtend, Record};
+use log::{Log, Logger, Record};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

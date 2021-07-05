@@ -9,13 +9,13 @@ pub struct Record {
 
 pub type Log = Mutex<Vec<Record>>;
 
-pub trait LogExtend {
+pub trait Logger {
     fn create_empty() -> Log;
     fn append(&self, record: Record) -> usize;
     fn read(&self, offset: usize) -> Result<Record, String>;
 }
 
-impl LogExtend for Log {
+impl Logger for Log {
     fn create_empty() -> Log {
         Mutex::new(Vec::<Record>::new())
     }
